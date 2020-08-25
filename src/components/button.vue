@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex h-100 mb-1 mr-5">
+    <div class="d-flex h-75 mb-1 mr-5">
         <div id="p_div" class="d-flex justify-content-center preto h-100 align-items-center">
             <a class="subtitle text-white">Perfil</a>
         </div>

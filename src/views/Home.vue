@@ -19,6 +19,7 @@
 import GoogleLogin from 'vue-google-login'
 
 import users from '@/services/users'
+import { http }from '@/services/config'
 import router from '@/router'
 
 export default {
@@ -53,6 +54,7 @@ export default {
               localStorage.setItem('name', resposta.data.user.username)
               localStorage.setItem('img_url', resposta.data.user.image_url)
               localStorage.setItem('jwt', resposta.data.login_token)
+              http.defaults.hearders.Authorization = `Bearer ${resposta.data.login_token}`
               router.push({name:'Admin'})
             })
             .catch(router.push({name:'Admin'}));

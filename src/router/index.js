@@ -1,10 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Home from '../views/Home.vue'
 import Inicio from '../views/Inicio.vue'
-import Quiz from '../views/Quiz.vue'
-import Topicos from '../views/Tópicos.vue'
+
 import Admin from '../views/Admin.vue'
+
+import quiz_titulo from '../components_pages/quiz_titulo.vue'
+import quiz_initial from '../components_pages/quiz_initial'
+import quiz_mater from '../components_pages/quiz_mater'
+import quiz_description from '../components_pages/quiz_description'
+
+import topico_initial from '../components_pages/topico_initial'
+import topico_mater from '../components_pages/topicos_mater'
+import topico_titulo from '../components_pages/topicos_titulo'
+import topico_description from '../components_pages/topicos_description'
 
 Vue.use(VueRouter)
 
@@ -26,14 +36,44 @@ const router = new VueRouter({
       },
       children: [
         {
-          path: '/Quizzes',
-          name: 'Quiz',
-          component: Quiz,
+          path: '/Quiz',
+          name: 'Quiz_initial',
+          component: quiz_initial,
+        },
+        {
+          path:'/Quiz/materia',
+          name:'Quiz_materia',
+          component: quiz_mater,
+        },
+        {
+          path:'/Quiz/titulo',
+          name:'Quiz_title',
+          component: quiz_titulo
+        },
+        {
+          path:'/Quiz/descrição',
+          name:'Quiz_description',
+          component: quiz_description
         },
         {
           path: '/Tópicos',
-          name: 'Topicos',
-          component: Topicos,
+          name: 'Topicos_initial',
+          component: topico_initial,
+        },
+        {
+          path: '/Tópicos/materia',
+          name: 'Topicos_materia',
+          component: topico_mater,
+        },
+        {
+          path: '/Tópicos/titulo',
+          name: 'Topicos_titulo',
+          component: topico_titulo,
+        },
+        {
+          path: '/Tópicos/descrição',
+          name: 'Topicos_description',
+          component: topico_description,
         },
         {
           path: '/Admin',
@@ -59,7 +99,7 @@ router.beforeEach((to,from,next) => {
   }
   else{
     if(token){
-      next('/inicio');
+      next('/Admin');
     }
     else{
       next();
