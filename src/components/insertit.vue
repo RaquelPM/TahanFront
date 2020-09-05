@@ -1,10 +1,10 @@
 <template>
     <div class="d-flex justify-content-center align-items-center inteira">
-        <div v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="bordas_lr px-5">
+        <div v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="bordas_lr px-5 d-flex align-items-center">
             <div v-bind:class="{mostrar:a, esconder:!a}" class="d-flex justify-content-center align-items-center flex-column">
                 <h1 class="titleG">Insira o título do</h1>
-                <h1 v-if="what=='/Quiz/titulo'" class="titleG mb-5">seu quiz</h1>
-                <h1 v-else class="titleG">seu tópico</h1>
+                <h1 v-if="what=='/Quiz/titulo'" class="titleG pb-2">seu quiz</h1>
+                <h1 v-else class="titleG pb-2">seu tópico</h1>
                 <Inputs altura="57px" largura="420px"/>
                 <div class="d-flex mt-5">
                     <button id="btn_voltar" v-on:click="direcionar_mater" class=" py-2 px-4 btnred bg-dark" >Voltar</button>
@@ -27,7 +27,7 @@ export default{
     },
     data(){
         return{
-            mostrara: false,
+            mostrar: false,
             what: this.$route.path,
             a: false,
         }
@@ -35,17 +35,23 @@ export default{
     methods:{
         direcionar_mater(){
             if(this.what=="/Quiz/titulo"){
-                setTimeout(()=>{
+                 setTimeout(()=>{
+                this.a=!this.a;
+                },100)
+                 setTimeout(()=>{
                 this.mostrar = !this.mostrar;
-                }, 100)
+                }, 300)
                 setTimeout(()=>{
                     router.push({name:'Quiz_materia'});
                 },700)
             }
             else{
+                  setTimeout(()=>{
+                this.a=!this.a;
+                },100)
                  setTimeout(()=>{
                 this.mostrar = !this.mostrar;
-                }, 100)
+                }, 300)
                 setTimeout(()=>{
                     router.push({name:'Topicos_materia'});
                 },700)
@@ -53,19 +59,25 @@ export default{
         },
         direcionar_description(){
             if(this.what=="/Quiz/titulo"){
+                  setTimeout(()=>{
+                this.a=!this.a;
+                },100)
                  setTimeout(()=>{
                 this.mostrar = !this.mostrar;
-                }, 100)
+                }, 300)
                 setTimeout(()=>{
                     router.push({name:'Quiz_description'});
                 },700)
             }
             else{
                  setTimeout(()=>{
+                this.a=!this.a;
+                },100)
+                 setTimeout(()=>{
                 this.mostrar = !this.mostrar;
-                }, 100)
+                }, 300)
                 setTimeout(()=>{
-                    router.push({name:'Topicos_description'});
+                    router.push({name:'Topicos_subtitulo'});
                 },700)
             }
         }
@@ -76,12 +88,8 @@ export default{
         },10)
          setTimeout(()=>{
             this.a=!this.a;
-        },300)
+        },580)
     }
 }
 
 </script>
-
-<style>
-
-</style>

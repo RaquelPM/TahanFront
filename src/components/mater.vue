@@ -1,9 +1,10 @@
 <template>
     <div class=" d-flex justify-content-center align-items-center inteira">
-        <div v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="d-flex justify-content-center align-items-center flex-column px-5 bordas_lr">
+        <div id="div_mater" v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="d-flex justify-content-center align-items-center flex-column px-5 bordas_lr">
             <h1 v-bind:class="{mostrar:t, esconder:!t}" class="titleG">Matéria do</h1>
             <h1 v-if="what=='/Quiz/materia'" v-bind:class="{mostrar:t, esconder:!t}" class="titleG" >Quiz</h1>
             <h1 v-else v-bind:class="{mostrar:t, esconder:!t}" class="titleG" >Tópico</h1>
+            <selectper />
             <div class="d-flex mt-5">
                 <button id="btn_voltar" v-on:click="direcionar_inital" class=" py-2 px-4 btnred bg-dark" >Voltar</button>
                 <button class=" py-2 px-4 btnred" v-on:click="direcionar_title" >Próximo</button>
@@ -15,11 +16,11 @@
 <script>
 
 import router from "@/router"
-//import selectper from "@/components/select_per"
+import selectper from "@/components/select_per"
 
 export default{
     components:{
-        //selectper,
+        selectper,
     },
     data(){
         return{
@@ -34,7 +35,7 @@ export default{
                 this.t = !this.t;
                 setTimeout(()=>{
                     this.mostrar = !this.mostrar;
-                }, 100)
+                }, 200)
                 setTimeout(()=>{
                     router.push({name:'Quiz_initial'});
                 },700)
@@ -43,7 +44,7 @@ export default{
                 this.t = !this.t;
                 setTimeout(()=>{
                     this.mostrar = !this.mostrar;
-                }, 100)
+                }, 200)
                 setTimeout(()=>{
                     router.push({name:'Topicos_initial'});
                 },700)
@@ -54,7 +55,7 @@ export default{
                  this.t=!this.t;
                 setTimeout(()=>{
                     this.mostrar = !this.mostrar;
-                }, 100)
+                }, 300)
                 setTimeout(()=>{
                     router.push({name:'Quiz_title'});
                 },700)
@@ -63,7 +64,7 @@ export default{
                  this.t=!this.t;
                 setTimeout(()=>{
                     this.mostrar = !this.mostrar;
-                }, 100)
+                }, 200)
                 setTimeout(()=>{
                     router.push({name:'Topicos_titulo'});
                 },700)
@@ -76,7 +77,7 @@ export default{
         },10)
          setTimeout(()=>{
             this.t=!this.t;
-        },300)
+        },580)
     },
 }
 
@@ -87,5 +88,6 @@ export default{
 #btn_voltar{
     margin-right:420px;
 }
+
 
 </style>

@@ -5,11 +5,11 @@
             <h1 v-else class="titleG">Tópico</h1>
         </div>
         <div v-if="what=='/Quiz'" class="d-flex mt-5">
-            <button class="mr-5 py-2 px-4 btnred" >Meus quizzes</button>
+            <button class="mr-5 py-2 px-4 btnred" v-on:click="direcionar_meus_q">Meus quizzes</button>
             <button class="ml-4 py-2 px-4 btnred" v-on:click="direcionar_mater_q">Criar novo quiz</button>
         </div>
         <div v-else class="d-flex mt-5">
-            <button class="mr-5 py-2 px-4 btnred" >Meus tópicos</button>
+            <button class="mr-5 py-2 px-4 btnred" v-on:click="direcionar_meus_t">Meus tópicos</button>
             <button class="ml-4 py-2 px-4 btnred" v-on:click="direcionar_mater_t" >Criar novo tópico</button>
         </div>
     </div>
@@ -31,7 +31,10 @@ export default{
         },
         direcionar_mater_t(){
             router.push({ name: 'Topicos_materia'})
-        }
+        },
+        direcionar_meus_q(){
+            router.push({ name: 'Meus_quizzes'})
+        },
     },
     created(){
         setTimeout(() =>{

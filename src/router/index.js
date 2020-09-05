@@ -6,15 +6,19 @@ import Inicio from '../views/Inicio.vue'
 
 import Admin from '../views/Admin.vue'
 
-import quiz_titulo from '../components_pages/quiz_titulo.vue'
+import quiz_titulo from '../components/insertit'
 import quiz_initial from '../components_pages/quiz_initial'
-import quiz_mater from '../components_pages/quiz_mater'
-import quiz_description from '../components_pages/quiz_description'
+import quiz_mater from '../components/mater'
+import quiz_description from '../components_pages/description'
+import estrut_q from '../components_pages/estrut_q'
 
 import topico_initial from '../components_pages/topico_initial'
-import topico_mater from '../components_pages/topicos_mater'
-import topico_titulo from '../components_pages/topicos_titulo'
-import topico_description from '../components_pages/topicos_description'
+import topico_mater from '../components/mater'
+import topico_titulo from '../components/insertit'
+import topico_subtitulo from '../components_pages/insersub'
+
+import my_quizzes from '../components_pages/my_quizzes'
+
 
 Vue.use(VueRouter)
 
@@ -56,7 +60,12 @@ const router = new VueRouter({
           component: quiz_description
         },
         {
-          path: '/Tópicos',
+          path:'/Quiz/questões',
+          name:'Numero_questões',
+          component: estrut_q
+        },
+        {
+          path:'/Tópicos',
           name: 'Topicos_initial',
           component: topico_initial,
         },
@@ -71,9 +80,14 @@ const router = new VueRouter({
           component: topico_titulo,
         },
         {
-          path: '/Tópicos/descrição',
-          name: 'Topicos_description',
-          component: topico_description,
+          path: '/Tópicos/subtitulo',
+          name: 'Topicos_subtitulo',
+          component: topico_subtitulo,
+        },
+        {
+          path:'/Quizzes',
+          name:'Meus_quizzes',
+          component: my_quizzes
         },
         {
           path: '/Admin',

@@ -1,11 +1,9 @@
 <template>
     <div class="d-flex justify-content-center align-items-center inteira">
-        <div v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="bordas_lr px-5">
+        <div id="div_sub" v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="bordas_lr px-5 d-flex align-items-center">
             <div v-bind:class="{mostrar:a, esconder:!a}" class="d-flex justify-content-center align-items-center flex-column">
-                <h1 class="titleG">Insira a descrição</h1>
-                <h1 v-if="what=='/Quiz/descrição'" class="titleG mb-5">do seu quiz</h1>
-                <h1 v-else class="titleG">do seu tópico</h1>
-                <Inputs altura="98px" largura="420px"/>
+                <h1 class="titleG mb-4">Subtítulo</h1>
+                <Inputs altura="57px" largura="420px"/>
                 <div class="d-flex mt-5">
                     <button id="btn_voltar" v-on:click="direcionar_title" class=" py-2 px-4 btnred bg-dark" >Voltar</button>
                     <button class=" py-2 px-4 btnred" >Próximo</button>
@@ -34,25 +32,15 @@ export default{
     },
     methods:{
         direcionar_title(){
-            if(this.what=="/Quiz/descrição"){
-                this.a=!this.a
-                setTimeout(()=>{
-                    this.mostrar = !this.mostrar;
-                }, 100)
-                setTimeout(()=>{
-                    router.push({name:'Quiz_title'});
-                },700)
-            }
-            else{
-                this.a=!this.a
-                setTimeout(()=>{
-                    this.mostrar = !this.mostrar;
-                }, 100)
-                setTimeout(()=>{
-                    router.push({name:'Topicos_titulo'});
-                },700)
-            }
-            
+            setTimeout(()=>{
+            this.a=!this.a;
+            },100)
+             setTimeout(()=>{
+            this.mostrar = !this.mostrar;
+            }, 300)
+            setTimeout(()=>{
+                router.push({name:'Topicos_titulo'});
+            },700)
         },
     },
     created(){
@@ -61,9 +49,8 @@ export default{
         },10)
          setTimeout(()=>{
             this.a=!this.a;
-        },100)
+        },580)
     }
 }
 
 </script>
-

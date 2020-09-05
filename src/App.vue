@@ -24,6 +24,13 @@
   background: #FF3358;
 }
 
+.titleM{
+  font-family: 'Roboto Slab';
+  font-size:48px;
+  color: #393737;
+  font-weight: normal;
+}
+
 .title{
   font-family: 'Roboto Slab';
   font-size:30px;
@@ -43,6 +50,14 @@
 
 .preto{
    background:#000000;
+}
+
+.text_rosa{
+  color:#FF3358;
+}
+
+.rosa{
+  background:#FF3358;
 }
 
 .inteira{
@@ -70,6 +85,16 @@
   outline: none !important;
 }
 
+.btncinza{
+  border:none;
+  font-size:20px;
+  font-family:'Roboto Slab';
+  color: #B2B2B2;
+  background: #C4C4C4;
+  border-radius: 6.56394px;
+  outline: none !important;
+}
+
 .bordas_lr{
     border-style:solid;
     border-top-width: 0;
@@ -77,6 +102,7 @@
     border-left-width: 2px;
     border-bottom-width: 0;
     border-color: #FF3358;
+    height:400px;
 }
 
 .mostrar{
@@ -92,7 +118,7 @@
 }
 
 .abrir{
-    transition: max-width 1s;
+    transition: max-width 1.5s;
     overflow:hidden;
     max-width: 800px;
 }
@@ -102,6 +128,20 @@
     overflow:hidden;
     max-width:0px;
     max-height: 200px;
+}
+
+.retangulo{
+    width: 902px;
+    height: 134px;
+    border-radius: 10.1724px;
+}
+
+.diminuir_borda{
+    border-radius: 3.78689px !important;
+}
+
+.icon{
+    margin-bottom: 20px;
 }
 
 </style>
