@@ -3,8 +3,8 @@
         <div v-bind:class="{abrir:mostrar, fechar:!mostrar}" class="bordas_lr px-5 d-flex align-items-center">
             <div v-bind:class="{mostrar:a, esconder:!a}" class="d-flex justify-content-center align-items-center flex-column">
                 <h1 class="titleG">Insira o título do</h1>
-                <h1 v-if="what=='/Quiz/titulo'" class="titleG pb-2">seu quiz</h1>
-                <h1 v-else class="titleG pb-2">seu tópico</h1>
+                <h1 v-if="what=='/Quiz/titulo'" class="titleG pb-3">seu quiz</h1>
+                <h1 v-else class="titleG pb-3">seu tópico</h1>
                 <Inputs altura="57px" largura="420px"/>
                 <div class="d-flex mt-5">
                     <button id="btn_voltar" v-on:click="direcionar_mater" class=" py-2 px-4 btnred bg-dark" >Voltar</button>
@@ -88,7 +88,7 @@ export default{
         },10)
          setTimeout(()=>{
             this.a=!this.a;
-        },580)
+        },620)
     }
 }
 
